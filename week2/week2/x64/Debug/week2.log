@@ -1,0 +1,12 @@
+﻿  FileName.cpp
+C:\Users\yjh88\OneDrive\문서\vcpp\vcpp\week2\week2\FileName.cpp(1,4): error C2014: 전처리기 명령은 공백 아닌 문자로 시작해야 합니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\sal.h(2361,1): error C2144: 구문 오류: int'은(는) ';' 다음에 와야 합니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\sal.h(2361,8): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\yjh88\OneDrive\문서\vcpp\vcpp\week2\week2\FileName.cpp(7,5): error C3861: 'printf': 식별자를 찾을 수 없습니다.
+C:\Users\yjh88\OneDrive\문서\vcpp\vcpp\week2\week2\FileName.cpp(14,9): error C3861: 'printf': 식별자를 찾을 수 없습니다.
+C:\Users\yjh88\OneDrive\문서\vcpp\vcpp\week2\week2\FileName.cpp(30,17): error C3861: 'putchar': 식별자를 찾을 수 없습니다.
+C:\Users\yjh88\OneDrive\문서\vcpp\vcpp\week2\week2\FileName.cpp(37,13): error C3861: 'printf': 식별자를 찾을 수 없습니다.
+C:\Users\yjh88\OneDrive\문서\vcpp\vcpp\week2\week2\FileName.cpp(40,13): error C3861: 'printf': 식별자를 찾을 수 없습니다.
+C:\Users\yjh88\OneDrive\문서\vcpp\vcpp\week2\week2\FileName.cpp(43,13): error C3861: 'printf': 식별자를 찾을 수 없습니다.
+C:\Users\yjh88\OneDrive\문서\vcpp\vcpp\week2\week2\FileName.cpp(46,13): error C3861: 'printf': 식별자를 찾을 수 없습니다.
+C:\Users\yjh88\OneDrive\문서\vcpp\vcpp\week2\week2\FileName.cpp(49,13): error C3861: 'printf': 식별자를 찾을 수 없습니다.
