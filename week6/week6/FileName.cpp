@@ -21,7 +21,8 @@ int isKeyPressed = 0;
 
 RECT rect_user = { 5, 5, 10, 10 }; // 왼쪽 상단 좌표 (50, 50)에서 오른쪽 하단 좌표 (150, 150)까지의 사각형
 RECT rect_target = { 50, 50, 150, 150 }; // 왼쪽 상단 좌표 (50, 50)에서 오른쪽 하단 좌표 (150, 150)까지의 사각형
-
+int dx = 0;
+int dy = 0;
 // 윈도우의 이벤트를 처리하는 콜백(Callback) 함수.
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
@@ -35,34 +36,38 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	switch (uMsg)
 	{
 	case WM_KEYDOWN:
-		isKeyPressed = 1;
-		if (wParam == VK_RIGHT)
-		{
-			rect_user.left += 5;
-			rect_user.right += 5;
-			InvalidateRect(hwnd, NULL, TRUE);
-		}
-		if (wParam == VK_LEFT)
-		{
-			rect_user.left -= 5;
-			rect_user.right -= 5;
-			InvalidateRect(hwnd, NULL, TRUE);
-		}
-		if (wParam == VK_UP)
-		{
-			rect_user.top -= 5;
-			rect_user.bottom -= 5;
-			InvalidateRect(hwnd, NULL, TRUE);
-		}
-		if (wParam == VK_DOWN)
-		{
-			rect_user.top += 5;
-			rect_user.bottom += 5;
-			InvalidateRect(hwnd, NULL, TRUE);
-		}
+		if (isKeyPressed == 0) {
+			isKeyPressed = 1;
+			if (wParam == VK_RIGHT) {
+				dx = 1; // 오른쪽으로 이동
+			}
+			else if (wParam == VK_LEFT) {
+				dx = -1; // 왼쪽으로 이동
+			}
+			else if (wParam == VK_UP) {
+				dy = -1; // 위로 이동
+			}
+			else if (wParam == VK_DOWN) {
+				dy = 1; // 아래로 이동
+			}
+			SetTimer(hwnd, 1, 10, NULL); // 연속적인 이동을 위한 타이머 시작
+		}	
 		break;
+	
+	case WM_TIMER:
+		// 연속적인 이동을 처리하는 타이머 핸들링
+		rect_user.left += dx;
+		rect_user.right += dx;
+		rect_user.top += dy;
+		rect_user.bottom += dy;
+		InvalidateRect(hwnd, NULL, TRUE);
+		break;
+
 	case WM_KEYUP:
 		isKeyPressed = 0;
+		dx = 0;
+		dy = 0;
+		KillTimer(hwnd, 1); // 타이머 중지
 		break;
 	case WM_PAINT:
 	{
