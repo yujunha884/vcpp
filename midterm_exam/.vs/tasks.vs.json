@@ -1,0 +1,25 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-yuhanCG",
+      "appliesTo": "Cube/yuhanCG.cpp",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-Cube",
+      "appliesTo": "Cube/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-midterm exam",
+      "appliesTo": "/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-midterm exam",
+      "appliesTo": "midterm exam.sln",
+      "type": "launch"
+    }
+  ]
+}
